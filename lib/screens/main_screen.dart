@@ -78,65 +78,11 @@ class _AnaSayfaState extends State<AnaSayfa>
                 padding: EdgeInsets.all(16),
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            image: DecorationImage(
-                              image: AssetImage('assets/model1.jpeg'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          width: MediaQuery.of(context).size.width - 160,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Daisy",
-                                style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "34 mins ago",
-                                style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 12,
-                                    color: Colors.grey),
-                              )
-                            ],
-                          ),
-                        ),
-                        Icon(
-                          Icons.more_vert,
-                          color: Colors.grey,
-                          size: 22,
-                        )
-                      ],
-                    ),
+                    postInformation(context),
                     SizedBox(
                       height: 15,
                     ),
-                    Text(
-                      "This official website features a ribbed kit zipper jacket that is"
-                      "modern and stylish. It looks very temparament and is recommend to friends",
-                      style: TextStyle(
-                          fontSize: 13,
-                          fontFamily: 'Montserrat',
-                          color: Colors.grey),
-                    ),
+                    postDescriptionText(),
                     SizedBox(
                       height: 15,
                     ),
@@ -342,6 +288,66 @@ class _AnaSayfaState extends State<AnaSayfa>
     );
   }
 
+  Text postDescriptionText() {
+    return Text(
+                    "This official website features a ribbed kit zipper jacket that is"
+                    "modern and stylish. It looks very temparament and is recommend to friends",
+                    style: TextStyle(
+                        fontSize: 13,
+                        fontFamily: 'Montserrat',
+                        color: Colors.grey),
+                  );
+  }
+
+  Row postInformation(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          height: 50,
+          width: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            image: DecorationImage(
+              image: AssetImage('assets/model1.jpeg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        Container(
+          width: MediaQuery.of(context).size.width - 160,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Daisy",
+                style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                "34 mins ago",
+                style: TextStyle(
+                    fontFamily: 'Montserrat', fontSize: 12, color: Colors.grey),
+              )
+            ],
+          ),
+        ),
+        Icon(
+          Icons.more_vert,
+          color: Colors.grey,
+          size: 22,
+        )
+      ],
+    );
+  }
+
   AppBar appBarWidget() {
     return AppBar(
       backgroundColor: Colors.transparent,
@@ -396,22 +402,26 @@ class _AnaSayfaState extends State<AnaSayfa>
         SizedBox(
           height: 10,
         ),
-        Container(
-          height: 30,
-          width: 75,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(15)),
-            color: Colors.brown,
-          ),
-          child: Center(
-            child: Text(
-              "Follow",
-              style: TextStyle(
-                  color: Colors.white, fontSize: 14, fontFamily: 'Montserrat'),
-            ),
-          ),
-        ),
+        followButton(),
       ],
+    );
+  }
+
+  Container followButton() {
+    return Container(
+      height: 30,
+      width: 75,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(15)),
+        color: Colors.brown,
+      ),
+      child: Center(
+        child: Text(
+          "Follow",
+          style: TextStyle(
+              color: Colors.white, fontSize: 14, fontFamily: 'Montserrat'),
+        ),
+      ),
     );
   }
 }
