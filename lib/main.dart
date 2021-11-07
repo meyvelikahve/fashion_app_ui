@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+=======
+import 'package:fashion_app/screens/main_screen.dart';
+import 'package:flutter/cupertino.dart';
+>>>>>>> 64a27564f13d4b697adb94c96c1eebe3be5b388b
 import 'package:flutter/material.dart';
 
-import 'details.dart';
 
 void main() => runApp(ModaApp());
 
@@ -13,6 +17,7 @@ class ModaApp extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
 
 class AnaSayfa extends StatefulWidget {
   @override
@@ -463,3 +468,5 @@ class _AnaSayfaState extends State<AnaSayfa>
     );
   }
 }
+=======
+>>>>>>> 64a27564f13d4b697adb94c96c1eebe3be5b388b
